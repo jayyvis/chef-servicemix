@@ -1,0 +1,41 @@
+#Version 1.0.3
+# copy this OSGi config properties file to #{servicemix dir}/etc directory and update the properties
+activemq.user=<%= @user_name %>
+activemq.password=<%= @user_password %>
+activemq.brokerURL=tcp://<servicemixipaddress>:61616
+activemq.incomingQueue=jbpmOrders
+activemq.unsuccessfulPostMarketplaceQueue=unsuccessfulPostMarketplace
+activemq.nagiosEventsQueue=jbpmNagiosEvents
+
+#rest endpoint in servicemix esb for jbpm and miq to send the success or fail order status messages
+servicemix.orderResponseURL=http://<servicemixipaddress>:8183/orderResponses/create
+
+#servicemix to jbpm redelivery config
+servicemix.bpm.maximumRedeliveries=3
+servicemix.bpm.redeliveryDelay=5000
+
+#servicemix to manageIQ redelivery config
+servicemix.miq.maximumRedeliveries=3
+servicemix.miq.redeliveryDelay=5000
+
+
+#MIQ Rest API Call settings
+rest.baseUrl=http://<miq fqdn>:3000/api/
+rest.user=<miq admin user>
+rest.password=<miq password>
+rest.clientBaseUrl=http://<miq fqdn>:3000/api/
+rest.hrefBase=http://<miq fqdn>/api/service_templates/
+
+
+#jBPM settings
+jbpm.restURL=http://<bpmsipaddress>:8080/business-central/
+jbpm.deploymentID=com.bah.ce:provisioning:1.0
+jbpm.processID=provisioning.provision-cf1
+jbpm.nagiosprocess.deploymentID=com.bah.ce:nagiosMonitoring:1.0
+jbpm.nagiosprocess.processID=nagiosMonitoring.monitoring-nagios
+jbpm.username=bpmadmin
+jbpm.password=passwordgoeshere
+
+#marketplace rest url for sending order responses
+marketplace.restURL=http://<marketplaceipaddress>/api/orders
+marketplace.restKey=U84196SpMq37xFj8oB5quuLC587UW7tJ
