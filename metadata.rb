@@ -1,10 +1,12 @@
-name             'servicemix'
-maintainer       'Mandeep Bal'
-maintainer_email 'bal_mandeep@bah.com'
+name             'chef-servicemix'
+maintainer       'Booz Allen Hamilton'
+maintainer_email 'jellyfishopensource@bah.com'
 license          'All rights reserved'
 description      'Installs/Configures servicemix'
-long_description 'Installs/Configures servicemix'
-version          '0.1.0'
+license          'GPL v2'
+long_description IO.read(File.join(File.dirname(__FILE__), 'README.md'))
+version          '0.1.1'
+supports         'rhel'
 
 depends "yum"
 depends "yum-epel"

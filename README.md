@@ -1,7 +1,5 @@
 servicemix Cookbook
 =================
-[![Build Status](https://secure.travis-ci.org/jellyfish/servicemix.png?branch=master)](http://travis-ci.org/jellyfish/servicemix)
-
 Pulls down the latest servicemix code, builds the code, installs the dependencies, and then starts the evm processes.
 
 Requirements
@@ -39,7 +37,7 @@ This section details "quick deployment" steps.
 
 1. Clone this repository from GitHub:
 
-        $ git clone git@github.com:jellyfish/servicemix-cookbook.git
+        $ git clone git@github.com:booz-allen-hamilton/servicemix.git
 
 2. Change directory to the repo folder
 
@@ -49,8 +47,8 @@ This section details "quick deployment" steps.
 
     $ vim solo.rb
 
-      file_cache_path "/root/dpi-chef"
-      cookbook_path "/root/dpi-chef/cookbooks"
+      file_cache_path "/root/chef-repo"
+      cookbook_path "/root/chef-repo/cookbooks"
 
 
 3. Install dependencies:
@@ -68,8 +66,8 @@ This section details "quick deployment" steps.
 
 License & Authors
 -----------------
-- Author:: Chris Kacerguis ( <Kacerguis_Christopher@bah.com> )
-- Author:: Mandeep Bal ( <bal_mandeep@bah.com> )
+- Author:: Chris Kacerguis
+- Author:: Mandeep Bal
 
 ```text
 Copyright:: 2014, Booz Allen Hamilton
