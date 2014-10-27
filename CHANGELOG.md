@@ -1,3 +1,3 @@
 # 0.1.0
 
-Initial release of jboss-fuse
+Initial release of chef-servicemix

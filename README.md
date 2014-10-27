@@ -28,40 +28,123 @@ Attributes
 
 Usage
 -----
-Simply add `role[esb]` to a run list.
+Simply add the cookbook to your runlist or add the cookbook to a role you have created.
 
 
 Deploying a servicemix Server
 -----------
 This section details "quick deployment" steps.
 
-1. Clone this repository from GitHub:
+1. Install Chef Client
 
-        $ git clone git@github.com:booz-allen-hamilton/servicemix.git
 
-2. Change directory to the repo folder
+          $ curl -L https://www.opscode.com/chef/install.sh | sudo bash
 
-        $ cd servicemix-cookbook
+2. Create a Chef repo folder and a cookbooks folder under the /tmp directory
+
+
+          $ mkdir -p /tmp/chef/cookbooks
+          $ cd /tmp/chef/
 
 3. Create a solo.rb file
 
-    $ vim solo.rb
 
-      file_cache_path "/root/chef-repo"
-      cookbook_path "/root/chef-repo/cookbooks"
+          $ vi /tmp/chef/solo.rb
+         
+               file_cache_path "/tmp/chef"
+               cookbook_path "/tmp/chef/cookbooks"
+
+4. Create a servicemix.json file, this will be the attributes file and contains the run_list
 
 
-3. Install dependencies:
+          $ vi /tmp/chef/roles/servicemix.json
+        
+                {
+                  "run_list": [
+                  "recipe[chef-servicemix]"
+                 ]
+                }
 
-        Download the dependent cookbooks from Chef Supermarket
+5. Download and extract the cookbook dependencies:
 
-4. Install Chef Client
 
-    $ curl -L https://www.opscode.com/chef/install.sh | sudo bash
+          $ cd /tmp/chef/cookbooks
+          $ knife cookbook site download ntp
+          $ tar xvfz ntp-*.tar.gz
+          $ rm -f ntp-*.tar.gz
+          $ knife cookbook site download fail2ban
+          $ tar xvfz fail2ban-*.tar.gz
+          $ rm -f fail2ban-*.tar.gz
+          $ knife cookbook site download openssl
+          $ tar xvfz openssl-*.tar.gz
+          $ rm -f openssl-*.tar.gz
+          $ knife cookbook site download iptables
+          $ tar xvfz iptables-*.tar.gz
+          $ rm -f iptables-*.tar.gz
+          $ knife cookbook site download selinux
+          $ tar xvfz selinux-*.tar.gz
+          $ rm -f selinux-*.tar.gz
+          $ knife cookbook site download aws
+          $ tar xvfz aws-*.tar.gz
+          $ rm -f aws-*.tar.gz
+          $ knife cookbook site download apt
+          $ tar xvfz apt-*.tar.gz
+          $ rm -f apt-*.tar.gz
+          $ knife cookbook site download xfs
+          $ tar xvfz xfs-*.tar.gz
+          $ rm -f xfs-*.tar.gz
+          $ knife cookbook site download mysql-chef_gem
+          $ tar xvfz mysql-chef_gem-*.tar.gz
+          $ rm -f mysql-chef_gem-*.tar.gz
+          $ knife cookbook site download yum-mysql-community
+          $ tar xvfz yum-mysql-community-*.tar.gz
+          $ rm -f yum-mysql-community-*.tar.gz
+          $ knife cookbook site download chef-sugar
+          $ tar xvfz chef-sugar-*.tar.gz
+          $ rm -f chef-sugar-*.tar.gz
+          $ knife cookbook site download yum
+          $ tar xvfz yum-*.tar.gz
+          $ rm -f yum-*.tar.gz
+          $ knife cookbook site download yum-epel
+          $ tar xvfz yum-epel-*.tar.gz
+          $ rm -f yum-epel-*.tar.gz
+          $ knife cookbook site download build-essential
+          $ tar xvfz build-essential-*.tar.gz
+          $ rm -f build-essential-*.tar.gz
+          $ knife cookbook site download xml
+          $ tar xvfz xml-*.tar.gz
+          $ rm -f xml-*.tar.gz
+          $ knife cookbook site download windows
+          $ tar xvfz windows-*.tar.gz
+          $ rm -f windows-*.tar.gz
+          $ knife cookbook site download iis
+          $ tar xvfz iis-*.tar.gz
+          $ rm -f iis-*.tar.gz
+          $ knife cookbook site download logrotate
+          $ tar xvfz logrotate-*.tar.gz
+          $ rm -f logrotate-*.tar.gz
+          $ knife cookbook site download pacman
+          $ tar xvfz pacman-*.tar.gz
+          $ rm -f pacman-*.tar.gz
+          $ knife cookbook site download chef_handler
+          $ tar xvfz chef_handler-*.tar.gz
+          $ rm -f chef_handler-*.tar.gz
 
-5. Run Chef-solo:
 
-    $ chef-solo -c solo.rb -j roles/esb.json
+6. Download and extract the cookbook:
+
+
+          $ cd /tmp/chef/cookbooks
+          $ knife cookbook site download chef-servicemix
+          $ tar xvfz chef-servicemix-*.tar.gz
+          $ rm -f chef-servicemix-*.tar.gz
+    
+7. Run Chef-solo:
+
+
+          $ cd /tmp/chef
+          $ chef-solo -c solo.rb -j servicemix.json
+
 
 
 License & Authors
