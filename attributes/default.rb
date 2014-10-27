@@ -7,6 +7,6 @@ default["servicemix"]["download_link"] = "http://apache.claz.org/servicemix/serv
 default["servicemix"]["file_name"] = "apache-servicemix-5.1.2"
 default["servicemix"]["file_type"] = "zip"
 default["servicemix"]["user_name"] = "servicemixadmin"
-default["servicemix"]["user_password"] = "smartvm"
+default["servicemix"]["user_password"] = "password"
 default["servicemix"]["code_url"] = "https://github.com/booz-allen-hamilton/servicemix/raw/master/bin/ce-routes-1.0.3.kar"
 default["servicemix"]["code_file_name"] = "ce-routes-1.0.3.kar"
