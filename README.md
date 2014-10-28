@@ -57,7 +57,7 @@ This section details "quick deployment" steps.
 4. Create a servicemix.json file, this will be the attributes file and contains the run_list
 
 
-          $ vi /tmp/chef/roles/servicemix.json
+          $ vi /tmp/chef/servicemix.json
         
                 {
                   "run_list": [
