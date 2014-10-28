@@ -72,63 +72,18 @@ This section details "quick deployment" steps.
           $ knife cookbook site download ntp
           $ tar xvfz ntp-*.tar.gz
           $ rm -f ntp-*.tar.gz
-          $ knife cookbook site download fail2ban
-          $ tar xvfz fail2ban-*.tar.gz
-          $ rm -f fail2ban-*.tar.gz
-          $ knife cookbook site download openssl
-          $ tar xvfz openssl-*.tar.gz
-          $ rm -f openssl-*.tar.gz
           $ knife cookbook site download iptables
           $ tar xvfz iptables-*.tar.gz
           $ rm -f iptables-*.tar.gz
-          $ knife cookbook site download selinux
-          $ tar xvfz selinux-*.tar.gz
-          $ rm -f selinux-*.tar.gz
-          $ knife cookbook site download aws
-          $ tar xvfz aws-*.tar.gz
-          $ rm -f aws-*.tar.gz
-          $ knife cookbook site download apt
-          $ tar xvfz apt-*.tar.gz
-          $ rm -f apt-*.tar.gz
-          $ knife cookbook site download xfs
-          $ tar xvfz xfs-*.tar.gz
-          $ rm -f xfs-*.tar.gz
-          $ knife cookbook site download mysql-chef_gem
-          $ tar xvfz mysql-chef_gem-*.tar.gz
-          $ rm -f mysql-chef_gem-*.tar.gz
-          $ knife cookbook site download yum-mysql-community
-          $ tar xvfz yum-mysql-community-*.tar.gz
-          $ rm -f yum-mysql-community-*.tar.gz
-          $ knife cookbook site download chef-sugar
-          $ tar xvfz chef-sugar-*.tar.gz
-          $ rm -f chef-sugar-*.tar.gz
+          $ knife cookbook site download java
+          $ tar xvfz java-*.tar.gz
+          $ rm -f java-*.tar.gz
           $ knife cookbook site download yum
           $ tar xvfz yum-*.tar.gz
           $ rm -f yum-*.tar.gz
           $ knife cookbook site download yum-epel
           $ tar xvfz yum-epel-*.tar.gz
           $ rm -f yum-epel-*.tar.gz
-          $ knife cookbook site download build-essential
-          $ tar xvfz build-essential-*.tar.gz
-          $ rm -f build-essential-*.tar.gz
-          $ knife cookbook site download xml
-          $ tar xvfz xml-*.tar.gz
-          $ rm -f xml-*.tar.gz
-          $ knife cookbook site download windows
-          $ tar xvfz windows-*.tar.gz
-          $ rm -f windows-*.tar.gz
-          $ knife cookbook site download iis
-          $ tar xvfz iis-*.tar.gz
-          $ rm -f iis-*.tar.gz
-          $ knife cookbook site download logrotate
-          $ tar xvfz logrotate-*.tar.gz
-          $ rm -f logrotate-*.tar.gz
-          $ knife cookbook site download pacman
-          $ tar xvfz pacman-*.tar.gz
-          $ rm -f pacman-*.tar.gz
-          $ knife cookbook site download chef_handler
-          $ tar xvfz chef_handler-*.tar.gz
-          $ rm -f chef_handler-*.tar.gz
 
 
 6. Download and extract the cookbook:
