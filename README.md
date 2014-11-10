@@ -89,10 +89,11 @@ This section details "quick deployment" steps.
 6. Download and extract the cookbook:
 
 
-          $ cd /tmp/chef/cookbooks
-          $ knife cookbook site download chef-servicemix
-          $ tar xvfz chef-servicemix-*.tar.gz
-          $ rm -f chef-servicemix-*.tar.gz
+          $ yum install -y wget
+          $ wget https://github.com/booz-allen-hamilton/chef-servicemix/archive/master.tar.gz
+          $ tar xvfz master.tar.gz 
+          $ rm -rf master.tar.gz 
+          $ mv chef-servicemix-master/ chef-servicemix
     
 7. Run Chef-solo:
 
