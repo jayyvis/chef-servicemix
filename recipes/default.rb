@@ -6,17 +6,6 @@
 #
 # All rights reserved - Do Not Redistribute
 #
-
-execute "yum clean" do
-  command "yum clean all"
-  action :run
-end
-
-execute "yum update" do
-  command "yum update -y"
-  action :run
-end
-
 include_recipe "yum"
 include_recipe "yum-epel"
 include_recipe "java"
