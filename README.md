@@ -38,18 +38,18 @@ This section details "quick deployment" steps.
 1. Install Chef Client
 
 
-          $ curl -L https://www.opscode.com/chef/install.sh | sudo bash
+          curl -L https://www.opscode.com/chef/install.sh | sudo bash
 
 2. Create a Chef repo folder and a cookbooks folder under the /tmp directory
 
 
-          $ mkdir -p /tmp/chef/cookbooks
-          $ cd /tmp/chef/
+          mkdir -p /tmp/chef/cookbooks
+          cd /tmp/chef/
 
 3. Create a solo.rb file
 
 
-          $ vi /tmp/chef/solo.rb
+          vi /tmp/chef/solo.rb
          
                file_cache_path "/tmp/chef"
                cookbook_path "/tmp/chef/cookbooks"
@@ -57,7 +57,7 @@ This section details "quick deployment" steps.
 4. Create a servicemix.json file, this will be the attributes file and contains the run_list
 
 
-          $ vi /tmp/chef/servicemix.json
+          vi /tmp/chef/servicemix.json
         
                 {
                   "run_list": [
@@ -68,38 +68,38 @@ This section details "quick deployment" steps.
 5. Download and extract the cookbook dependencies:
 
 
-          $ cd /tmp/chef/cookbooks
-          $ knife cookbook site download ntp
-          $ tar xvfz ntp-*.tar.gz
-          $ rm -f ntp-*.tar.gz
-          $ knife cookbook site download iptables
-          $ tar xvfz iptables-*.tar.gz
-          $ rm -f iptables-*.tar.gz
-          $ knife cookbook site download java
-          $ tar xvfz java-*.tar.gz
-          $ rm -f java-*.tar.gz
-          $ knife cookbook site download yum
-          $ tar xvfz yum-*.tar.gz
-          $ rm -f yum-*.tar.gz
-          $ knife cookbook site download yum-epel
-          $ tar xvfz yum-epel-*.tar.gz
-          $ rm -f yum-epel-*.tar.gz
+          cd /tmp/chef/cookbooks
+          knife cookbook site download ntp
+          tar xvfz ntp-*.tar.gz
+          rm -f ntp-*.tar.gz
+          knife cookbook site download iptables
+          tar xvfz iptables-*.tar.gz
+          rm -f iptables-*.tar.gz
+          knife cookbook site download java
+          tar xvfz java-*.tar.gz
+          rm -f java-*.tar.gz
+          knife cookbook site download yum
+          tar xvfz yum-*.tar.gz
+          rm -f yum-*.tar.gz
+          knife cookbook site download yum-epel
+          tar xvfz yum-epel-*.tar.gz
+          rm -f yum-epel-*.tar.gz
 
 
 6. Download and extract the cookbook:
 
 
-          $ yum install -y wget
-          $ wget https://github.com/booz-allen-hamilton/chef-servicemix/archive/master.tar.gz
-          $ tar xvfz master.tar.gz 
-          $ rm -rf master.tar.gz 
-          $ mv chef-servicemix-master/ chef-servicemix
+          yum install -y wget
+          wget https://github.com/booz-allen-hamilton/chef-servicemix/archive/master.tar.gz
+          tar xvfz master.tar.gz 
+          rm -rf master.tar.gz 
+          mv chef-servicemix-master/ chef-servicemix
     
 7. Run Chef-solo:
 
 
-          $ cd /tmp/chef
-          $ chef-solo -c solo.rb -j servicemix.json
+          cd /tmp/chef
+          chef-solo -c solo.rb -j servicemix.json
 
 
 
